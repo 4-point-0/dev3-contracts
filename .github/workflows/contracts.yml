@@ -1,0 +1,33 @@
+name: Get contracts from repo
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  use_api_via_script:
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.12.0"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install node-fetch
+
+      - name: Run script
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+          UPDATE_CONTRACTS_SECRET: ${{ secrets.UPDATE_CONTRACTS_SECRET }}
+          CONTRACTS_API_URL: ${{ secrets.CONTRACTS_API_URL }}
+        run: |
+          node .github/actions-scripts/update-contracts.mjs
