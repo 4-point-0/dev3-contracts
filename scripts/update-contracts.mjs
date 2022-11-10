@@ -123,7 +123,7 @@ try {
     }
   }
 
-  const res = await fetch(process.env.CONTRACTS_API_URL, {
+  await fetch(process.env.CONTRACTS_API_URL, {
     method: "POST",
     body: JSON.stringify(contracts),
     headers: {
@@ -131,7 +131,6 @@ try {
       Authorization: `Bearer ${process.env.UPDATE_CONTRACTS_SECRET}`,
     },
   });
-  console.log(res);
 } catch (err) {
   console.log(err);
 }
