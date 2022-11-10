@@ -50,7 +50,6 @@ query{
   }
 }
 `;
-console.log("test");
 try {
   const response = await fetch(githubGraphQlApi, {
     method: "POST",
