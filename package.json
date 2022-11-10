@@ -4,7 +4,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "update-contracts": "node .github/actions-scripts/update-contracts.mjs"
+    "update-contracts": "node scripts/update-contracts.mjs"
   },
   "dependencies": {
     "node-fetch": "^3.2.10"
