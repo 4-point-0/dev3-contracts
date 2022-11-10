@@ -18,7 +18,19 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18.12.0"
-          cache: yarn
+          # global cache directory
+          cache: "yarn"
+          cache-dependency-path: "**/yarn.lock"
+
+      # will cache node modules and only re-install them only if yarn.lock get updated
+      - name: setup cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: install modules
+        run: yarn install
 
       - name: Install dependencies
         run: yarn add node-fetch
@@ -29,4 +41,4 @@ jobs:
           UPDATE_CONTRACTS_SECRET: ${{ secrets.UPDATE_CONTRACTS_SECRET }}
           CONTRACTS_API_URL: ${{ secrets.CONTRACTS_API_URL }}
         run: |
-          yarn run .github/actions-scripts/update-contracts.mjs
+          yarn run update-contracts
