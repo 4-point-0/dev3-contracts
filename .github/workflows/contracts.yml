@@ -18,10 +18,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18.12.0"
-          cache: npm
+          cache: yarn
 
       - name: Install dependencies
-        run: npm install node-fetch
+        run: yarn add node-fetch
 
       - name: Run script
         env:
