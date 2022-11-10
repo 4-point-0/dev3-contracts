@@ -29,4 +29,4 @@ jobs:
           UPDATE_CONTRACTS_SECRET: ${{ secrets.UPDATE_CONTRACTS_SECRET }}
           CONTRACTS_API_URL: ${{ secrets.CONTRACTS_API_URL }}
         run: |
-          node .github/actions-scripts/update-contracts.mjs
+          yarn run .github/actions-scripts/update-contracts.mjs
