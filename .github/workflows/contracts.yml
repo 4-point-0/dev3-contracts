@@ -10,7 +10,6 @@ on:
 jobs:
   use_api_via_script:
     runs-on: ubuntu-latest
-    permissions: {}
     steps:
       - name: checkout
         uses: actions/checkout@v3
