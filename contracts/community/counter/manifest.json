@@ -1,0 +1,16 @@
+{
+    "$schema": "../../schema.json",
+    "tags": [
+        "counter"
+    ],
+    "implements": [
+    ],
+    "name": "Counter",
+    "description": "Counter contract that allows users to increment and decrement a counter",
+    "eventDecorators": [
+    ],
+    "constructorDecorators": [
+    ],
+    "functionDecorators": [
+    ]
+}

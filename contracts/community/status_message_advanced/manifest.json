@@ -1,0 +1,17 @@
+{
+    "$schema": "../../schema.json",
+    "tags": [
+        "status-message",
+        "advanced"
+    ],
+    "implements": [
+    ],
+    "name": "Status Message Advanced",
+    "description": "Status Message contract that allows user to store a message",
+    "eventDecorators": [
+    ],
+    "constructorDecorators": [
+    ],
+    "functionDecorators": [
+    ]
+}
